@@ -1,0 +1,24 @@
+<!--display table-->
+<table class="table table-hover">
+    <tr>
+        <th>Product Name</th>
+        <th>Product UPC</th>
+        <th>Catagory</th>
+        <th>Manufacture</th>
+        <th>Active Status</th>
+        <th>Version</th>
+        <th>Price</th>
+        <th>Edit</th>
+    </tr>
+    <tr ng-repeat="product in productList">
+        <!--populate using ng-repeat-->
+        <td>{{product.productName}}</td>
+        <td>{{product.productUpc}}</td>
+        <td>{{product.productCatagory}}</td>
+        <td>{{product.productManufac}}</td>
+        <td></td>
+        <td>{{product.productVersion}}</td>
+        <td>{{product.productPrice}}</td>
+        <td><a href="#!/addEdit"><button class="btn btn-primary btn-xs" ng-click="showEditPanel(product)">Edit</button></a></td>
+    </tr>
+</table>

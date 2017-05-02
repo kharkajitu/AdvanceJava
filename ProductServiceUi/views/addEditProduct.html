@@ -1,0 +1,101 @@
+<!--add edit product form-->
+<table class="table">
+    <tr>
+        <td>Product Id</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Product Id" ng-model="productModel.productId"></td>
+        <td></td>
+        <td>Name</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Product Name" ng-model="productModel.productName"></td>
+        <td></td>
+        <td>Number</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Product Number" ng-model="productModel.productNumber"></td>
+    </tr>
+    <tr>
+        <td>UPC</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter UPC Code" ng-model="productModel.productUpc"></td>
+        <td></td>
+        <td>Catagory</td>
+        <td>:</td>
+        <td><select><!--use ng-repeat to populate the list once retrivted from database-->
+                        <option>Laptop</option>
+                        <option>Camera</option>
+                        <option>Desktop</option>
+                        <option>Printer</option>
+                        <option>Television</option>
+                        <option>Smartphone</option>
+                        <option>Ipad</option>
+                    </select></td>
+        <td></td>
+        <td>Manufacture</td>
+        <td>:</td>
+        <td><select><!--use ng-repeat to populate the list once retrivted from database-->
+                        <option>Sony</option>
+                        <option>Apple</option>
+                        <option>Dell</option>
+                        <option>Hp</option>
+                        <option>Lenovo</option>
+                        <option>Asus</option>
+                        <option>Acer</option>
+                        <option>Samsung</option>
+                    </select></td>
+    </tr>
+    <tr>
+        <td>Version</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Version" ng-model="productModel.productVersion"></td>
+        <td></td>
+        <td>Active Status</td>
+        <td>:</td>
+        <td><select>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select></td>
+        <td></td>
+        <td>Product Quantity</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Product Quantity" ng-model="productModel.productQuantity"></td>
+    </tr>
+
+    <tr>
+        <td>Threshold Quantity</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Threshold Quantity" ng-model="productModel.thresholdQuantity"></td>
+        <td></td>
+        <td>Order Quantity</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Order Quantity" ng-model="productModel.orderQuantity"></td>
+        <td></td>
+        <td>Price</td>
+        <td>:</td>
+        <td><input type="text" placeholder="Enter Price" ng-model="productModel.productPrice"></td>
+    </tr>
+    <tr ng-if="!forAddProduct">
+        <td>Active Date</td>
+        <td>:</td>
+        <td><input type="text" placeholder="" ng-model="productModel.activeDate"></td>
+        <td></td>
+        <td>Inactive Date</td>
+        <td>:</td>
+        <td><input type="text" placeholder="" ng-model="productModel.inactiveDate"></td>
+        <td></td>
+        <td>Created Date</td>
+        <td>:</td>
+        <td><input type="text" placeholder="" ng-model="productModel.createdDate"></td>
+    </tr>
+</table>
+<div style="margin-left:10px">
+    Description
+    <div>
+        <textarea rows="4" cols="50" placeholder="Add Description Here..." ng-model="productModel.productDesc"></textarea>
+    </div>
+
+</div>
+<a href="#!/displaytable"><button class="btn btn-primary btn-sm" style="margin-left:10px" ng-if="forAddProduct" ng-click="addProduct()">Add Product</button></a>
+<a href="#!/displaytable"><button class="btn btn-primary btn-sm" style="margin-left:10px" ng-if="!forAddProduct" ng-click="editProduct()">Save</button></a>
+<a href="#!/displaytable"><button class="btn btn-danger btn-sm" style="margin-left:10px" ng-if="!forAddProduct" ng-click="deleteButton()">Delete</button></a>
+<a href="#!/displaytable"><button class="btn btn-danger btn-sm" style="margin-left:10px" ng-click="cancelButton()">Cancel</button></a>
+<!--add edit product ending-->

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        Product Service
+    </title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body ng-app="productApp" ng-controller="productCtrl" style="background-color: grey">
+    <div class="myContainer">
+
+        <div class="imageBar">
+            <img src="/resources/images/image2.jpeg" width="100%" height="100px">
+        </div>
+        <!--navbar starting-->
+        <div class="navBar" ng-if="showNavBar">
+            <div class="dropdown">
+                <a href="#!/home"><button class="dropbtn">Home</button></a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Product Catagory
+                </button>
+                <div class="dropdown-content">
+                    <a href="#!/displaytable"><button ng-click="getCatagory('laptop')">Laptop</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('ipad')">Ipad</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('television')">Television</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('desktop')">Desktop</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('printer')">Printer</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('smartphone')">Smartphone</button></a>
+                    <a href="#!/displaytable"><button ng-click="getCatagory('camera')">Camera</button></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Product Manufacture
+                </button>
+                <div class="dropdown-content">
+                    <a href="#!/displaytable"><button ng-click="getManufacture('sony')">Sony</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('apple')">Apple</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('dell')">Dell</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('hp')">Hp</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('lenovo')">Lenovo</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('asus')">Asus</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('acer')">Acer</button></a>
+                    <a href="#!/displaytable"><button ng-click="getManufacture('samsung')">Samsung</button></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#!/displaytable"><button class="dropbtn" ng-click="allProduct()">All Products</button></a>
+            </div>
+            <div class="dropdown">
+                <a href="#!/addEdit"><button class="dropbtn" ng-click="showAddPanel()">Add Product</button></a>
+            </div>
+            <div class="dropdown">
+                <a href="#!/contactus"><button class="dropbtn">Contact US</button></a>
+            </div>
+        </div>
+        <!--navbar ending-->
+
+        <!--loginpage start-->
+        <div ng-if="!showNavBar">
+            <div class="loginHeading">
+                Welcome To Product Service
+            </div>
+            <div class="loginHeading">
+                Please login below
+            </div>
+            <div id="loginBox">
+                <table>
+                    <tr>
+                        <td width="80px"><b>UserName<b></td>
+                            <td width="20px">:</td>
+                            <td><input type="text" class="form-control greyBackground" placeholder="Enter UserName"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password<b></td>
+                        <td>:</td>
+                        <td><input class="form-control greyBackground" type="password" placeholder="Enter Password"></td>
+                    </tr>
+                    <tr height="10px">
+                    </tr>
+                    <tr>
+                        <td><a href="#!/home"><button class="btn btn-primary btn-sm" ng-click="loginButtonClicked()">Login</button></a></td>
+                        <td></td>
+                        <td align="center"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--loginpanel end-->
+        <div ng-view></div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/scripts/productApp.js"></script>
+    <script src="/scripts/services/productService.js"></script>
+
+    <script src="/scripts/controllers/productCtrl.js"></script>
+
+</body>
+
+</html>
